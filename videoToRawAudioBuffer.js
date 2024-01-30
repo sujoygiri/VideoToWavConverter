@@ -2,8 +2,9 @@ export default function getRawAudioBuffer(fileBuffer) {
     const sampleRate = 16000;
     const numberOfChannels = 1;
     const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-    audioContext.decodeAudioData(fileBuffer).then((audioBuffer)=>{
-        console.log(audioBuffer);
+    return audioContext.decodeAudioData(fileBuffer)
+    /**
+     * .then((audioBuffer)=>{
         let duration = audioBuffer.duration;
         const offlineAudioContext = new OfflineAudioContext(numberOfChannels,sampleRate*duration,sampleRate)
         const soundSource = offlineAudioContext.createBufferSource();
@@ -14,4 +15,5 @@ export default function getRawAudioBuffer(fileBuffer) {
             console.log(renderedAudioBuffer);
         })
     })
+     */
 }
