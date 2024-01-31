@@ -1,0 +1,3 @@
+#action-btn:disabled,#input-video-file:disabled{
+    cursor: not-allowed;
+}
